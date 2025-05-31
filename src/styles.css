@@ -1,0 +1,143 @@
+/* Global Reset */
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 2rem;
+  background: #f5f7fa;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Form */
+form {
+  display: grid;
+  gap: 1rem;
+  background: white;
+  padding: 1.5rem;
+  max-width: 500px;
+  margin: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+input, select {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 0.8rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Job List */
+.job-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 1rem;
+}
+@media (max-width: 768px) {
+  .job-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+
+
+/* Job Card */
+.job-item {
+  background: #ffffff;
+  padding: 1.25rem;
+  border-left: 6px solid #007bff;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.job-item.green {
+  border-left-color: #28a745;
+}
+.job-item.orange {
+  border-left-color: #fd7e14;
+}
+.job-item.red {
+  border-left-color: #dc3545;
+}
+.job-item.gray {
+  border-left-color: #6c757d;
+}
+
+.job-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.job-actions button {
+  flex: 1;
+  font-size: 0.85rem;
+}
+
+/* Status Badge */
+.status-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 1rem;
+  margin-top: 0.5rem;
+  color: white;
+  font-weight: 600;
+}
+
+.status-applied {
+  background: #007bff;
+}
+.status-interviewing {
+  background: #17a2b8;
+}
+.status-offered {
+  background: #28a745;
+}
+.status-rejected {
+  background: #dc3545;
+}
+.status-archived {
+  background: #6c757d;
+}
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
