@@ -1,24 +1,59 @@
-/* Global Reset */
+/* 🌍 Global Reset */
 * {
   box-sizing: border-box;
 }
+
 body {
   font-family: "Segoe UI", sans-serif;
   margin: 0;
   padding: 2rem;
-  background: #f5f7fa;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
+/* 🎨 Light & Dark Theme Variables */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --card-bg: #f8f8f8;
+  --card-border: #e0e0e0;
+  --button-bg: #007bff;
+  --button-text: #ffffff;
+  --input-bg: #ffffff;
+  --input-text: #111111;
+  --input-focus: #e3f2fd;
+  --placeholder-color: #777;
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  /* --text-color: #f5f5f5; */
+  --text-color:#8f7300;
+  --dark-mode-text: #121212;
+  --card-bg: #1f1f1f;
+  --card-border: #333;
+  /* --button-bg: #FFD700;
+  --button-bg: #ff00c3; */
+  --button-bg: #8f7300;
+  --button-text: #ffffff;
+  --input-bg: #2a2a2a;
+  --input-text: #f5f5f5;
+  --input-focus: #333333;
+  --placeholder-color: #aaa;
+}
+
+/* 🧱 Layout */
 h1 {
   text-align: center;
   margin-bottom: 2rem;
 }
 
-/* Form */
+/* 📋 Form & Modal Styling */
 form {
   display: grid;
   gap: 1rem;
-  background: white;
+  background: var(--card-bg);
   padding: 1.5rem;
   max-width: 500px;
   margin: auto;
@@ -26,29 +61,58 @@ form {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-input, select {
-  padding: 0.8rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
+.modal h2 {
+  color: var(--dark-mode-text);
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
-button {
-  background-color: #007bff;
-  border: none;
-  color: white;
-  padding: 0.8rem;
+/* ✍️ Inputs, Selects, Textareas */
+input,
+select,
+textarea {
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  border: 1px solid var(--card-border);
   border-radius: 6px;
+  padding: 0.65rem 1rem;
   font-size: 1rem;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--placeholder-color);
+  opacity: 0.8;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  background-color: var(--input-focus);
+  outline: none;
+  border-color: var(--button-bg);
+}
+
+/* 🔘 Buttons */
+button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
 }
 
 button:hover {
-  background-color: #0056b3;
+  opacity: 0.9;
 }
 
-/* Job List */
+/* 🗂️ Job Cards */
 .job-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -61,20 +125,21 @@ button:hover {
   }
 }
 
-
-
-/* Job Card */
 .job-item {
-  background: #ffffff;
+  background-color: var(--card-bg);
+  color: var(--text-color);
   padding: 1.25rem;
-  border-left: 6px solid #007bff;
+  border-left: 6px solid var(--button-bg);
   border-radius: 10px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
+/* 🎨 Job Status Colors */
 .job-item.green {
   border-left-color: #28a745;
 }
@@ -88,29 +153,15 @@ button:hover {
   border-left-color: #6c757d;
 }
 
-.job-actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.job-actions button {
-  flex: 1;
-  font-size: 0.85rem;
-}
-
-/* Status Badge */
 .status-badge {
   display: inline-block;
   font-size: 0.75rem;
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem 0.6rem;
   border-radius: 1rem;
+  font-weight: bold;
+  color: #fff;
   margin-top: 0.5rem;
-  color: white;
-  font-weight: 600;
 }
-
 .status-applied {
   background: #007bff;
 }
@@ -126,91 +177,41 @@ button:hover {
 .status-archived {
   background: #6c757d;
 }
-@keyframes fadeIn {
-  from { opacity: 0 }
-  to { opacity: 1 }
+
+/* 🧰 Action Buttons Inside Card */
+.job-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
 }
 
-@keyframes scaleUp {
-  from {
-    transform: scale(0.95);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-:root {
-  --bg-color: #ffffff;
-  --text-color: #000000;
-  --card-bg: #f5f5f5;
+.job-actions button {
+  flex: 1;
+  font-size: 0.85rem;
 }
 
-[data-theme="dark"] {
-  --bg-color: #121212;
-  --text-color: #f5f5f5;
-  --card-bg: #1f1f1f;
-}
-
-/* Apply variables */
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
-
-.job-card {
-  background-color: var(--card-bg);
-  color: var(--text-color);
-  border-radius: 8px;
-  padding: 1rem;
-}
-:root {
-  --bg-color: #ffffff;
-  --text-color: #000000;
-  --card-bg: #f5f5f5;
-  --button-bg: #007bff;
-  --button-color: #ffffff;
-  --border-color: #ccc;
-}
-
-[data-theme="dark"] {
-  --bg-color: #121212;
-  --text-color: #f5f5f5;
-  --card-bg: #1f1f1f;
-  --button-bg: #444;
-  --button-color: #f5f5f5;
-  --border-color: #555;
-}
-
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-family: sans-serif;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.job-card,
-input,
-select,
-button,
-textarea {
-  background-color: var(--card-bg);
-  color: var(--text-color);
-  border: 1px solid var(--border-color);
-}
-
+/* 🌗 Theme Toggle Button */
 .theme-toggle {
   position: fixed;
   top: 1rem;
   right: 1rem;
   padding: 0.5rem 1rem;
   background-color: var(--button-bg);
-  color: var(--button-color);
+  color: var(--button-text);
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
 }
 
+/* 🌀 Animation (Optional) */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
+@keyframes scaleUp {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
