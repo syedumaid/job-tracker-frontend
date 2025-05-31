@@ -30,25 +30,25 @@ function JobItem({ job, onEdit, onDelete, onArchive }) {
         </div>
 
         {job.salary && (
-          <div style={{ marginTop: "0.5rem" }}>💰 {job.salary}</div>
+          <div style={{ marginTop: "0.5rem" }}>$ {job.salary}</div>
         )}
         {job.description && (
           <div style={{ marginTop: "0.5rem" }}>{job.description}</div>
         )}
         {job.tags && (
           <div style={{ marginTop: "0.5rem", fontSize: "0.9rem", color: "#555" }}>
-            🏷️ <i>{job.tags.split(',').map(tag => tag.trim()).join(' | ')}</i>
+             <i>{job.tags.split(',').map(tag => tag.trim()).join(' | ')}</i>
           </div>
         )}
       </div>
 
       <div className="job-actions">
         {/* <button onClick={() => navigate(`/edit/${job.id}`)}>✏️ Edit</button> */}
-        <button onClick={() => onEdit(job)}>✏️ Edit</button>
+        <button onClick={() => onEdit(job)}>Edit</button>
 
-        <button onClick={() => onDelete(job.id)}>🗑 Delete</button>
+        <button onClick={() => onDelete(job.id)}>Delete</button>
         {job.status !== "Archived" && (
-          <button onClick={() => onArchive(job.id)}>📥 Archive</button>
+          <button onClick={() => onArchive(job.id)}>Archive</button>
         )}
       </div>
     </div>

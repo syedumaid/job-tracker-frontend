@@ -270,14 +270,14 @@ function Home() {
             fontWeight: "bold"
           }}
         >
-          🔄 Reset Filters
+          Reset Filters
         </button>
       </div>
 
       {/* Search Inputs */}
       <input
         type="text"
-        placeholder="🔍 Search by company or title..."
+        placeholder="Search by company or title..."
         value={search}
         onChange={handleSearch}
         style={{
@@ -294,7 +294,7 @@ function Home() {
 
       <input
         type="text"
-        placeholder="🏷️ Filter by tag (e.g., remote, urgent)..."
+        placeholder="Filter by tag (e.g., remote, urgent)..."
         value={tagFilter}
         onChange={(e) => {
           const newTag = e.target.value;
@@ -359,7 +359,7 @@ function Home() {
               cursor: currentPage === 1 ? "default" : "pointer"
             }}
           >
-            ⬅️ Prev
+            Prev
           </button>
 
           <button
@@ -375,7 +375,7 @@ function Home() {
               cursor: currentPage === totalPages ? "default" : "pointer"
             }}
           >
-            Next ➡️
+            Next
           </button>
         </div>
       )}

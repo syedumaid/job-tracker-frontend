@@ -2,6 +2,7 @@
 import axios from 'axios';
 
 // const BASE_URL = process.env.REACT_APP_API_URL || 'http://10.14.0.2:3000';
+// const BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080';
 const BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080';
 // REACT_APP_API_URL=http://localhost:8080
 
