@@ -8,16 +8,17 @@ body {
   margin: 0;
   padding: 2rem;
   background-color: var(--bg-color);
-  color: var(--text-color);
+  /* color: var(--text-color); */
+  color: #000000;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* 🎨 Light & Dark Theme Variables */
 :root {
-  --bg-color: #ffffff;
-  --text-color: #111111;
-  --card-bg: #f8f8f8;
-  --card-border: #e0e0e0;
+  --bg-color: #f5f5f5;
+  --text-color: #000000;
+  --card-bg: #ffffff;
+  --card-border: #000000;
   --button-bg: #007bff;
   --button-text: #ffffff;
   --input-bg: #ffffff;
@@ -29,13 +30,13 @@ body {
 [data-theme="dark"] {
   --bg-color: #121212;
   /* --text-color: #f5f5f5; */
-  --text-color:#8f7300;
+  --text-color:#ffffff;
   --dark-mode-text: #121212;
   --card-bg: #1f1f1f;
   --card-border: #333;
   /* --button-bg: #FFD700;
   --button-bg: #ff00c3; */
-  --button-bg: #8f7300;
+  --button-bg: #038365;
   --button-text: #ffffff;
   --input-bg: #2a2a2a;
   --input-text: #f5f5f5;
@@ -99,6 +100,7 @@ textarea:focus {
 /* 🔘 Buttons */
 button {
   background-color: var(--button-bg);
+  /* FAB button + */
   color: var(--button-text);
   border: none;
   border-radius: 6px;
@@ -138,7 +140,10 @@ button:hover {
   justify-content: space-between;
   transition: background 0.3s ease, color 0.3s ease;
 }
-
+.job-item h3 {
+  color: #e100ff;
+  /* h3 color for title pages */
+}
 /* 🎨 Job Status Colors */
 .job-item.green {
   border-left-color: #28a745;
@@ -411,11 +416,12 @@ body {
 }
 
 .job-item {
-  background-color: #1e1e1e;
+  /* background-color: #1e1e1e; */
   border: 1px solid #444;
   padding: 1.5rem;
   border-radius: 10px;
-  color: #f1f1f1;
+  /* color: #000000;  */
+  /* text color for text */
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   transition: transform 0.2s ease-in-out;
 }

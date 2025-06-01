@@ -23,7 +23,7 @@ function JobItem({ job, onEdit, onDelete, onArchive }) {
   return (
     <div className={`job-item ${cardColor[job.status] || ""}`}>
       <div>
-        <strong>{job.title}</strong> <br />
+        <h3>{job.title}</h3> <br />
         <em>{job.company}</em>
         <div className={`status-badge ${statusColor[job.status]}`}>
           {job.status}

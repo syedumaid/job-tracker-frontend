@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 function ContactForm({ onSubmit, initialData }) {
   const [formData, setFormData] = useState({
     name: "",
+    date:"",
     platform: "",
     email: "",
     phone: "",
@@ -28,7 +29,7 @@ function ContactForm({ onSubmit, initialData }) {
         onSubmit(formData);
       }}
     >
-      {["name", "platform", "email", "phone", "company", "role", "comments",].map((field) => (
+      {["name","platform", "email", "phone", "company", "role", "comments",].map((field) => (
         <input
           key={field}
           type="text"
@@ -38,7 +39,6 @@ function ContactForm({ onSubmit, initialData }) {
           onChange={handleChange}
         />
       ))}
-
       <select name="status" value={formData.status} onChange={handleChange}>
         <option value="">Contact Status</option>
         <option value="message sent">Message Sent</option>

@@ -245,7 +245,8 @@ function Home() {
         style={{
           position: "fixed", bottom: "2rem", right: "2rem",
           width: "60px", height: "60px", borderRadius: "50%",
-          backgroundColor: "#007bff", color: "#fff", fontSize: "2rem",
+          // backgroundColor: "#007bff", 
+          color: "#fff", fontSize: "2rem",
           border: "none", cursor: "pointer", boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
           zIndex: 999
         }}
